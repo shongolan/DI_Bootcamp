@@ -1,0 +1,33 @@
+body {
+  background: gray;
+}
+
+.flag {
+  height: 200px;
+  width: 300px;
+  background: white;
+  position: absolute;
+  margin: auto;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+.blue {
+
+  height: 100%;
+  width: 100px;
+  left: 0;
+  top: 0;
+  background: blue;
+  position: absolute;
+}
+.red {
+
+  height: 100%;
+  width: 100px;
+  left: 200px;
+  top: 0;
+  background: red;
+  position: absolute;
+}
