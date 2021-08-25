@@ -1,0 +1,21 @@
+body{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-align: center;
+}
+.form{
+    background-color: black;
+    color:white;
+    width: 800px;
+    padding: 30px 20px;
+}
+.div{
+    margin: 10px 0px;
+    background-color: green;
+    padding: 10px;
+    border-radius: 8px;
+    width: 100px;
+}
+    
+

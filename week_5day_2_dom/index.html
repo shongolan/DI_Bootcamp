@@ -1,0 +1,185 @@
+<!--<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+            .successfully-saved.hide-opacity{
+            opacity: 0;
+        }
+
+        .successfully-saved {
+            color: #FFFFFF;
+            text-align: center;
+
+            -webkit-transition: opacity 3s ease-in-out;
+            -moz-transition: opacity 3s ease-in-out;
+            -ms-transition: opacity 3s ease-in-out;
+            -o-transition: opacity 3s ease-in-out;
+            opacity: 1;
+        }
+    </style>
+</head>
+<body>
+    <button onclick="bold()">bold</button>
+    <article>
+        <h1 id="a"> Some Facts </h1>
+        <h2 id="h"onclick="changestyle()"> The Chocolate </h2>
+        <h3 id="q"onclick="hide()">History of the chocolate</h3>
+        <p id="p"> Chocolate is made from tropical Theobroma cacao tree seeds. 
+        Its earliest use dates back to the Olmec civilization in Mesoamerica.</p>
+        <p id="p2" onmouseover="animate()"> After the European discovery of the Americas, chocolate became 
+        very popular in the wider world, and its demand exploded. </p>
+        <p id="p"> Chocolate has since become a popular food product that millions enjoy every day, 
+        thanks to its unique, rich, and sweet taste.</p> 
+        <p id="last" >  But what effect does eating chocolate have on our health?</p> 
+    </article>
+    <form>
+      <label for="fname">First name:</label><br>
+      <input type="text" id="fname" name="fname"required><br>
+      <label for="lname">Last name:</label><br>
+      <input type="text" id="lname" name="lname"required><br><br>
+      <input type="submit" value="Submit" id="submit"onclick="submit()">
+    </form> 
+    <div class="usersAnswer"></div>
+    <p onmouseover="highlight()"onmouseout="return_normal()"><strong id="strong">Hello</strong> I hope you are enjoying <strong id="strong1">this</strong> class. At the
+        <strong id="strong2">end</strong> you <strong id="strong3">will</strong> be great Developers!
+        <strong id="strong4">Enjoy</strong> the <strong id="strong5">JavaScript </strong> lessons</p>
+    <script>
+        document.getElementById("last").style.display="none"
+        let h=document.getElementById("h")
+        function changestyle(){
+            h.style.background="green"
+        }
+        let a=document.getElementById("a")
+        let random =  Math.floor(Math.random() * 101);
+        a.style.fontSize=random+"px"
+        
+        function hide(){
+             document.getElementById("q").style.display="none"   
+        }
+        function bold(){
+           document.getElementsById("p").style.fontWeigth="1000" 
+        }
+        let fname = document.getElementsById("fname").value
+        let lname = document.getElementsById("lname").value
+        let cont=document.getElementsByClassName("usersAnswer")
+       
+        function submit(){
+            cont.innerHTML=`<table style="width:100%">
+                            <tr>
+                                <th>${fname}</th>
+                                <th>${lname}</th>
+                            </tr>
+                         </table>`
+        }
+        function animate(){
+        document.getElementById("p2").classList.add("successfully-saved")
+       }
+
+       function getBold_items(){
+           let x=document.getElementsByTagName("strong")
+           console.log(x)
+        }
+        getBold_items()
+        function highlight(){
+            document.getElementById("strong").style.color="blue"
+            document.getElementById("strong1").style.color="blue"
+            document.getElementById("strong2").style.color="blue"
+            document.getElementById("strong3").style.color="blue"
+            document.getElementById("strong4").style.color="blue"
+            document.getElementById("strong5").style.color="blue"
+        }
+        function return_normal(){
+            document.getElementById("strong").style.color="black"
+            document.getElementById("strong1").style.color="black"
+            document.getElementById("strong2").style.color="black"
+            document.getElementById("strong3").style.color="black"
+            document.getElementById("strong4").style.color="black"
+            document.getElementById("strong5").style.color="black"
+        }
+
+       
+    </script>
+    
+</body>
+</html> -->
+
+<!--<!doctype html> 
+<html lang="en"> 
+    <head> 
+        <meta charset="utf-8"> 
+        <title>Volume of a Sphere</title> 
+        <style>  
+            body{padding-top:30px;} 
+            label,input{display:block;}  
+        </style> 
+    </head> 
+    <body> 
+        <p>Input radius value and get the volume of a sphere.</p>  
+            <label for="radius">Radius</label><input type="text" name="radius"value="" id="radius" required> 
+            <label for="volume">Volume</label><input type="text" name="volume"value=""  id="volume"> 
+            <button onclick="Calculate()">Calculate</button>    
+        <script>
+            function Calculate(){
+                let radius=document.getElementById("radius").value
+                radius=parseInt(radius)
+                volume=(4/3*3.14)*(radius*radius*radius)
+                document.getElementById("volume").value=volume
+                
+            }
+        </script>
+    </body> 
+</html> -->
+
+<!DOCTYPE html>
+<html>
+ <head>
+  <meta charset="utf-8" />
+  <title>Challenge: Mad Libs</title>
+ </head>
+ <body>
+
+    <h1>Mad Libs</h1>
+
+
+      <label >Noun:</label><input type="text" value="" id="noun" required><br> 
+      <label >Adjective:</label><input type="text" value="" id="adjective" required><br> 
+      <label >Someone's Name:</label><input type="text" value="" id="person" required><br> 
+      <label >Verb:</label><input type="text" value="" id="verb" required><br> 
+      <label >A place:</label><input type="text" value="" id="place" required><br> 
+
+    <button onclick="generatestory()">Lib it!</button>
+
+    <p>Generated story: 
+    <span id="story"></span>
+    </p>
+
+    <script>
+        function generatestory(){
+         let noun = document.getElementById("noun").value
+         let adjective = document.getElementById("adjective").value
+         let person = document.getElementById("person").value
+         let verb = document.getElementById("verb").value
+         let place = document.getElementById("place").value
+         let con = document.getElementById("story")
+         con.innerHTML=`
+             <p>One day ${person} said to his four ${noun}, “Come fishing with me today!  
+              Let’s go far out to ${place}. The fish are much bigger and better there, than they are 
+              close to land.”  
+             “Okay!” said his ${noun}.  They were ${adjective} fishermen and ${verb} those big fish.  
+             The four ${noun} and ${person} jumped into their canoe and started to row.  When they got far out to ${place} 
+             and could no longer see land, ${person} jumped onto the end of the canoe.  He drew out his magical fishing hook. 
+             When his brothers were looking ahead, he cast the hook over the side of the canoe.  
+             The hook sunk down deep into the blue water.
+             </p>`
+         }
+    </script>
+
+ </body>
+</html>
+
+
+
